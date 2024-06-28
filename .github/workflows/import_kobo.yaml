@@ -25,9 +25,9 @@ jobs:
  - name: Install packages
    uses: r-lib/actions/setup-r-dependencies@v2
    with:
-   packages: |
-    any::tidyverse
-    any::robotoolbox
+    packages: |
+     any::tidyverse
+     any::robotoolbox
 - name: importation données
   run: Rscript -e 'source("importation.R")'
   env:
