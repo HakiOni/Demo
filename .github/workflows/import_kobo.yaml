@@ -27,8 +27,8 @@ jobs:
    uses: r-lib/actions/setup-r-dependencies@v2
    with:
    packages: |
-   any::tidyverse
-   any::robotoolbox
+    any::tidyverse
+    any::robotoolbox
 - name: importation données
   run: Rscript -e 'source("importation.R")'
   env:
@@ -36,8 +36,8 @@ jobs:
      MY_UID: ${{secrets.MY_UID_GHA}}
 - name: commit results
   run: |
-  git config --local user.email "oniadon.sabi@gmail.com"
-  git config --local user.name "HakiOni"
-  git add survey_data.rds
-  git commit -m 'Data updated' || echo " No changes to commit"
-  git push origin || echo "No change to commit"
+   git config --local user.email "oniadon.sabi@gmail.com"
+   git config --local user.name "HakiOni"
+   git add survey_data.rds
+   git commit -m 'Data updated' || echo " No changes to commit"
+   git push origin || echo "No change to commit"
