@@ -3,10 +3,11 @@ name: Importation_kobo
 
 #Kind of execution
 on:
+workflow_dispatch:
+
 #schedule:
 #-cron:'5****'min-heure-jour-mois-annee
- workflow_dispatch:
- 
+
 #Actions
 jobs:
  importation:
@@ -29,7 +30,7 @@ jobs:
    any::tidyverse
    any::robotoolbox
 - name: importation données
-  run: Rscript -e 'source("import_data.R")'
+  run: Rscript -e 'source("importation.R")'
   env:
      MY_TOKEN: ${{secrets.MY_TOKEN_GHA}}
      MY_UID: ${{secrets.MY_UID_GHA}}
